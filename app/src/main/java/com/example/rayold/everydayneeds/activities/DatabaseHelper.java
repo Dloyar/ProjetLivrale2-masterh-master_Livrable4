@@ -221,7 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         boolean result = false;
         String query = "SELECT * FROM "
-                + "service"
+                + "addServiceFournisseur"
                 + " WHERE "
                 + "serviceFournisseur"
                 + " = \""
