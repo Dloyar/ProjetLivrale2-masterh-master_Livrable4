@@ -5,20 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class searchByRate extends AppCompatActivity {
-    Button searchByRate;
+public class searchByTime extends AppCompatActivity {
+    Button searchTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_by_rate);
-        searchByRate =(Button)findViewById(R.id.button2);
+        setContentView(R.layout.activity_search_by_time);
 
-        searchByRate.setOnClickListener(new View.OnClickListener() {
+        searchTime =(Button)findViewById(R.id.button6);
+
+        searchTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(searchByRate.this, ServiceList2.class);
+                Intent i = new Intent(searchByTime.this, ServiceList2.class);
                 startActivity(i);
             }
         });

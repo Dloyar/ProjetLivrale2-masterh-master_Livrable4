@@ -42,7 +42,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FournisseurListForEachService" />
         <activity android:name=".RatingService" />
-        <activity android:name=".searchByRate"></activity>
+        <activity android:name=".searchByRate" />
+        <activity android:name=".searchByTime"></activity>
     </application>
 
 </manifest>

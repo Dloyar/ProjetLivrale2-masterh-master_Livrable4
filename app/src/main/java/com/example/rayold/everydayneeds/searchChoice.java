@@ -21,7 +21,7 @@ public class searchChoice extends AppCompatActivity {
         searchTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(searchChoice.this, nameList.class);
+                Intent i = new Intent(searchChoice.this, searchByTime.class);
                 startActivity(i);
             }
         });
