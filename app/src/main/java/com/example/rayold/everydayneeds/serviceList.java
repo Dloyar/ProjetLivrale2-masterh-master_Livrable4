@@ -68,11 +68,17 @@ public class serviceList extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "This service already exists", Toast.LENGTH_SHORT).show();
                 }else{
                     boolean insert = db.insertServiceFournisseur(getIntent().getStringExtra("EMAIL"), (String) listView.getItemAtPosition(position));
-                    if (insert = true) {
+                    if (insert = true && db.fournisseurhasservice(getIntent().getStringExtra("EMAIL"))==false) {
                         Intent j = new Intent(serviceList.this, AvailabilityFournisseur.class);
                         Toast.makeText(getApplicationContext(), "service saved: successful ", Toast.LENGTH_SHORT).show();
                         j.putExtra("EMAIL",user.getEmail() );
                         startActivity(j);
+                    }
+                    else if(insert = true && db.fournisseurhasservice(getIntent().getStringExtra("EMAIL"))==true){
+                        Intent a = new Intent(serviceList.this, ServiceEdit.class);
+                        Toast.makeText(getApplicationContext(), "service saved: successful : Avaibility kept", Toast.LENGTH_SHORT).show();
+                        a.putExtra("EMAIL",user.getEmail() );
+                        startActivity(a);
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "service saved: fail", Toast.LENGTH_SHORT).show();

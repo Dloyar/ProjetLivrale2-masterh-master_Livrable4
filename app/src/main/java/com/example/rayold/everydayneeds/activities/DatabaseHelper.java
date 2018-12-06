@@ -58,7 +58,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    
+    public boolean fournisseurhasservice(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor =db.rawQuery("Select * from addServiceFournisseur where email=?", new String[]{email});
+        if (cursor.getCount()>1)
+            return true;
+        else
+            return false;
+
+
+    }
     public boolean insertFournisseur(String company, String phone, String address, String description, String licence, String email) {
         SQLiteDatabase db = this.getWritableDatabase();
 
