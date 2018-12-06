@@ -41,7 +41,8 @@
             android:label="@string/title_activity_fournisseur_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FournisseurListForEachService" />
-        <activity android:name=".RatingService"></activity>
+        <activity android:name=".RatingService" />
+        <activity android:name=".searchByRate"></activity>
     </application>
 
 </manifest>

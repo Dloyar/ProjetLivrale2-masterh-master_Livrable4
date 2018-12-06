@@ -9,18 +9,26 @@ import android.widget.Button;
 import com.example.rayold.everydayneeds.activities.Login;
 
 public class searchChoice extends AppCompatActivity {
-    Button name, service,logg;
+    Button searchTime,searchRate, service,logg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choice);
-        name = (Button) findViewById(R.id.searchName);
+        searchTime = (Button) findViewById(R.id.etsearchTime);
+        searchRate= (Button) findViewById(R.id.button4);
         service = (Button) findViewById(R.id.searchService);
         logg = (Button) findViewById(R.id.button5);
-        name.setOnClickListener(new View.OnClickListener() {
+        searchTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(searchChoice.this, nameList.class);
+                startActivity(i);
+            }
+        });
+        searchRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(searchChoice.this, searchByRate.class);
                 startActivity(i);
             }
         });

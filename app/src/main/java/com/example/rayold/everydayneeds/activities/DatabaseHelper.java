@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.rayold.everydayneeds.Fournisseur;
+import com.example.rayold.everydayneeds.Service;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -42,6 +42,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public Cursor getService(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM service",null);
+        return cursor;
+    }
+
+    public Cursor get(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM service",null);
         return cursor;

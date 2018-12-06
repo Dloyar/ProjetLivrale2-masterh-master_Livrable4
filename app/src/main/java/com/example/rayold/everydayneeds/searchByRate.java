@@ -7,19 +7,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class RatingService extends AppCompatActivity {
-    Button submitt;
+public class searchByRate extends AppCompatActivity {
+    Button searchByRate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating_service);
-        submitt = (Button)findViewById(R.id.button2);
+        setContentView(R.layout.activity_search_by_rate);
+        searchByRate =(Button)findViewById(R.id.button2);
 
-        submitt.setOnClickListener(new View.OnClickListener() {
+        searchByRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(RatingService.this, searchChoice.class);
-                Toast.makeText(getApplicationContext(), "Rating successfull", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(searchByRate.this, nameList.class);
                 startActivity(i);
             }
         });

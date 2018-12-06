@@ -19,7 +19,7 @@
         android:textAlignment="center"/>
 
     <Button
-        android:id="@+id/searchName"
+        android:id="@+id/etsearchTime"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
