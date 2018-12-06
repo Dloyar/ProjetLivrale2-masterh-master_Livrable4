@@ -40,7 +40,8 @@
             android:name=".FournisseurList"
             android:label="@string/title_activity_fournisseur_list"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FournisseurListForEachService"></activity>
+        <activity android:name=".FournisseurListForEachService" />
+        <activity android:name=".RatingService"></activity>
     </application>
 
 </manifest>

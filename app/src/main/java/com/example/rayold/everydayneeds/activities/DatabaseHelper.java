@@ -409,6 +409,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return information;
 
     }
+    public Service serviceInformation(String serviceName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "Select * FROM "
+                + "service"
+                + " WHERE "
+                + "serviceName"
+                + " = \""
+                + serviceName
+                + "\"";
+        Cursor cursor = db.rawQuery(query,null);
+        Service service = new Service();
+        if (cursor.moveToFirst()) {
+            service.setServiceName(cursor.getString(1));
+            service.setServiceCost(cursor.getString(2));
+            cursor.close();
+        } else {
+            service = null;
+        }
+        db.close();
+        return service;
+
+    }
     public DateAndTime heureetjour(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "Select * FROM "
@@ -433,7 +455,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return disponible;
 
     }
-
 
     public boolean isAdministrator(String email){
 
@@ -512,16 +533,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return user;
 
     }
-
-
-    public Cursor getHourlyRate(String serviceName){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from service where serviceName=?", new String[]{serviceName});
-        return cursor;
-    }
-
-
-
-
 
 }
