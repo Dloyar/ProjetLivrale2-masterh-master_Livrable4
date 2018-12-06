@@ -101,7 +101,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="63dp"
-        android:text="Add Service" />
+        android:text="Edit Service" />
 
     <Button
         android:id="@+id/button"

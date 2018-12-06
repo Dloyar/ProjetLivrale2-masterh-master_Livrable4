@@ -87,6 +87,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getFournisseurService(String serviceFournisseur){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM addServiceFournisseur where serviceFournisseur=?",new String[]{serviceFournisseur});
+        return cursor;
+    }
+
     public boolean fournisseurHasPersonalInformation(String email){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from informationFournisseur where email=?", new String[]{email});
